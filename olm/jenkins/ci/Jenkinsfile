@@ -1,0 +1,11 @@
+@Library('olcne-pipeline') _
+import com.oracle.olcne.pipeline.BranchPattern
+
+imagePipeline(
+  branchPattern: new BranchPattern(master: "main", feature: "feature/.*"),
+  containers: ["container-registry.oracle.com/olcne/base:latest": "olcne/base:latest"],
+  platforms: [ 'ol8'],
+  architectures: ['x86_64', 'aarch64'],
+  buildScript: "sh build-image.sh",
+)
+
