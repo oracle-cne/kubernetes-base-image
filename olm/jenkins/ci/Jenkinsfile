@@ -3,7 +3,7 @@ import com.oracle.olcne.pipeline.BranchPattern
 
 imagePipeline(
   branchPattern: new BranchPattern(master: "main", feature: '(?!^main$)(^.*$)'),
-  containers: ["container-registry.oracle.com/olcne/base:latest": "olcne/base:latest"],
+  containers: ["container-registry.oracle.com/olcne/ock:base-image": "olcne/ock:base-image"],
   platforms: [ 'ol8'],
   architectures: ['x86_64', 'aarch64'],
   buildScript: "sh build-image.sh",
